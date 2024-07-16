@@ -5,11 +5,21 @@ import datetime
 
 # Create your views here.
 def index(request):
+    now = datetime.datetime.now()
     if request.method == 'GET':
         name = ""
-    name = request.POST["name"]
-    now = datetime.datetime.now()
-    return render(request, "index.html", {
+        return render(request, "index.html", {
+        "name": name.capitalize(),
+        "msg": "Successful !",
+        "h": now.hour ,
+        "m": now.minute ,
+        "s" :now.second,
+        "i": now.day
+    })
+    else:
+        name = request.POST["name"]
+        now = datetime.datetime.now()
+        return render(request, "index.html", {
         "name": name.capitalize(),
         "msg": "Successful !",
         "h": now.hour ,
