@@ -12,6 +12,6 @@ def index(request, name):
         "h": now.hour ,
         "m": now.minute ,
         "s" :now.second,
-        "if": now.day
+        "i": now.day
     })
 

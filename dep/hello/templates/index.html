@@ -3,6 +3,10 @@
     <h1>Hello {{name}}</h1>
     <p> {{msg}}</p>
     <i>{{h}} : {{m}} : {{s}}</i>
-    {%
+    {% if i == 30 %}
+    <p style ="color : green" >Time is way</p>
+    {% else %}
+    <b>{{i}}</b>
+    {% endif %}
 </body>
 </html>
