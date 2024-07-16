@@ -5,6 +5,8 @@ import datetime
 
 # Create your views here.
 def index(request):
+    if request.method == 'GET':
+        name = ""
     name = request.POST["name"]
     now = datetime.datetime.now()
     return render(request, "index.html", {
