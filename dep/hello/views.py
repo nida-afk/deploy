@@ -5,7 +5,7 @@ import datetime
 
 # Create your views here.
 def index(request):
-    
+    name = request.POST["name"]
     now = datetime.datetime.now()
     return render(request, "index.html", {
         "name": name.capitalize(),
