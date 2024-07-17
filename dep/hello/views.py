@@ -12,7 +12,7 @@ taskss = []
 
 class ChoicesForm(forms.Form):
     choices = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
-    
+
     delete = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
 # Create your views here.
 def index(request):
@@ -54,9 +54,9 @@ def choose(request):
                 if delete in choicess:
                     del choicess[delete]
                     choice_form = ChoicesForm()
-        else:
-            choice_form = ChoicesForm()
-            return render(request, 'choices.html',{
+    else:
+        choice_form = ChoicesForm()
+        return render(request, 'choices.html',{
                 'choices': choicess,
                 'form': choice_form,
                 'error': 'Invalid choice'
