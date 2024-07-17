@@ -57,6 +57,11 @@ def choose(request):
                     del choicess[delete]
 
             choice_form = ChoicesForm()
+            return render(request, 'choices.html', {
+                'choices': choicess,
+                'form': choice_form,
+                'error': 'Invalid choice'
+            })
     else:
         choice_form = ChoicesForm()
 
