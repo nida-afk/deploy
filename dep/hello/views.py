@@ -9,7 +9,7 @@ name = ""
 def index(request):
     now = datetime.datetime.now()
     if request.method == 'POST':
-        name += request.POST["name"]
+        name = name + request.POST["name"]
     return render(request, "index.html", {
         "name": name.capitalize(),
         "msg": "Successful !",
