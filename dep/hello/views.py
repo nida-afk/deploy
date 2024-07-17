@@ -21,3 +21,5 @@ def index(request):
         "i": now.day
     })
 
+def tasks(request):
+    
