@@ -6,7 +6,7 @@ from django import forms
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
 
-choicess = {}
+choicess ={}
 
 taskss = []
 
@@ -47,6 +47,10 @@ def choose(request):
 
         choice_form = ChoicesForm(request.POST)
         if choice_form.is_valid():
+            choice = choice_form.cleaned_data['choices']
+            choicess[choice] = 1
+            choice_form = ChoicesForm()
             
+
 
 
