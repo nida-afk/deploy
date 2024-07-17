@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import datetime
 
 name = "Nida"
+
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
