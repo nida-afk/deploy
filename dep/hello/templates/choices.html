@@ -3,7 +3,7 @@
  <form method="post" >
     {%csrf_token %}
     {{ form }}
-
+<input type="submit" name="submit">
     {% for c in choices  %}
 <li>{{ c }}</li>
     {% endfor %}

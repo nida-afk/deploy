@@ -12,8 +12,7 @@ taskss = []
 
 class ChoicesForm(forms.Form):
     choices = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
-    submit = forms.SubmitField()
-    reset = forms.ResetInput()
+    
     delete = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
 # Create your views here.
 def index(request):
