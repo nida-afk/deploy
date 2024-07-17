@@ -2,15 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
 
-class 
-
+name = "Nida"
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
-    if request.method == 'GET':
-        name = ""
-
-    else:
+    if request.method == 'POST':
         name = request.POST["name"]
     now = datetime.datetime.now()
     return render(request, "index.html", {
