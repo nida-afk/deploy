@@ -15,7 +15,7 @@ taskss = []
 class ChoicesForm(forms.Form):
     choices = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
 
-    delete =  
+    delete = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')] )
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
