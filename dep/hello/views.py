@@ -22,4 +22,11 @@ def index(request):
     })
 
 def tasks(request):
-    
+    if request.method == 'POST':
+        task_form = TaskForm(request.POST)
+        if task_form.is_valid():
+            task_form.save()
+    else:
+        task_form = TaskForm()
+    tasks = Task.objects.all()
+    return render(request, 'tasks.html', {'tasks': tasks, 'form': task_form})
