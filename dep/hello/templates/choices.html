@@ -1,0 +1,12 @@
+<html>
+<body>
+ <form method="post" >
+    {%csrf_token %}
+    {{ form }}
+
+    {% for c in choices  %}
+<li>{{ c }}</li>
+    {% endfor %}
+    </form>
+</body>
+</html>
