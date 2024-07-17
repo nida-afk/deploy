@@ -7,6 +7,7 @@ class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
 
 choicess = {}
+
 taskss = []
 
 class ChoicesForm(forms.Form):
@@ -43,6 +44,9 @@ def tasks(request):
 
 def choose(request):
     if request.method == 'POST':
-        
+
+        choice_form = ChoicesForm(request.POST)
+        if choice_form.is_valid():
+            
 
 
