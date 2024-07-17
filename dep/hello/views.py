@@ -49,20 +49,19 @@ def choose(request):
         if choice_form.is_valid():
             choice = choice_form.cleaned_data['choices']
             choicess[choice] = 1
+
+            # Move this inside the is_valid() block
             if 'delete' in request.POST:
                 delete = choice_form.cleaned_data['delete']
                 if delete in choicess:
                     del choicess[delete]
 
             choice_form = ChoicesForm()
-
     else:
         choice_form = ChoicesForm()
-        return render(request, 'choices.html',{
-                'choices': choicess,
-                'form': choice_form,
-                'error': 'Invalid choice'
-            })
 
-
-
+    return render(request, 'choices.html', {
+        'choices': choicess,
+        'form': choice_form,
+        'error': 'Invalid choice'
+    })
