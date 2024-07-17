@@ -28,9 +28,8 @@ def tasks(request):
         task_form = TaskForm(request.POST)
         if task_form.is_valid():
             task = task_form.cleaned_data['task']
-            taskss.append(task_form)
+            taskss.append(task)
             task_form = TaskForm()
     else:
         task_form = TaskForm()
-    taskss.append(task_form)
     return render(request, 'tasks.html', {'tasks': taskss, 'form': task_form})
