@@ -4,8 +4,7 @@
     <h1>Hello {{name}}</h1>
     <form  method ="post">
     {% csrf_token %}
-    <input type="text" name="name" placeholder= "Name">
-    <input type="submit" name = "Save">
+
     </form>
     <p> {{msg}}</p>
     <i>{{h}} : {{m}} : {{s}}</i>
