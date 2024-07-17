@@ -8,11 +8,11 @@ def index(request):
     now = datetime.datetime.now()
     if request.method == 'GET':
         name = ""
-        
+
     else:
         name = request.POST["name"]
-        now = datetime.datetime.now()
-        return render(request, "index.html", {
+    now = datetime.datetime.now()
+    return render(request, "index.html", {
         "name": name.capitalize(),
         "msg": "Successful !",
         "h": now.hour ,
