@@ -6,7 +6,15 @@ from django import forms
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
 
+
 taskss = []
+
+class ChoicesForm(forms.Form):
+
+    choices = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
+    submit = forms.SubmitField()
+    reset = forms.ResetInput()
+    delete = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
@@ -33,3 +41,6 @@ def tasks(request):
     else:
         task_form = TaskForm()
     return render(request, 'tasks.html', {'tasks': taskss, 'form': task_form})
+
+def choose(request):
+    
