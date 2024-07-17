@@ -5,7 +5,7 @@ from django import forms
 
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
-    priority = forms.CharField(max_length=10 , default= 5)
+    priority = forms.CharField(max_length=10 , min_value= 5, )
 
 
 choicess ={}
