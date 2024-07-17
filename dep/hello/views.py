@@ -3,14 +3,13 @@ from django.http import HttpResponse
 import datetime
 from django import forms
 
-name = "Nida"
+name = ""
 
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
     if request.method == 'POST':
-        name = request.POST["name"]
-    now = datetime.datetime.now()
+        name += request.POST["name"]
     return render(request, "index.html", {
         "name": name.capitalize(),
         "msg": "Successful !",
