@@ -6,11 +6,10 @@ from django import forms
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
 
-
+choices = {}
 taskss = []
 
 class ChoicesForm(forms.Form):
-
     choices = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
     submit = forms.SubmitField()
     reset = forms.ResetInput()
@@ -43,4 +42,6 @@ def tasks(request):
     return render(request, 'tasks.html', {'tasks': taskss, 'form': task_form})
 
 def choose(request):
-    
+    if request.method == 'POST':
+        
+
