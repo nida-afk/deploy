@@ -5,15 +5,17 @@ from django import forms
 
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
+    priority = forms.CharField(max_length=10 , default= 5)
+
 
 choicess ={}
 
 taskss = []
 
 class ChoicesForm(forms.Form):
-    choices = forms.ChoiceField(choice=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
+    choices = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
 
-    delete = forms.ChoiceField(choice=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
+    delete = forms.ChoiceField(choices=[('task1', 'Task 1'), ('task2', 'Task 2'), ('task3', 'Task 3')])
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
