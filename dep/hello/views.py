@@ -6,7 +6,7 @@ from django import forms
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
 
-choices = {}
+choicess = {}
 taskss = []
 
 class ChoicesForm(forms.Form):
@@ -44,4 +44,5 @@ def tasks(request):
 def choose(request):
     if request.method == 'POST':
         
+
 
