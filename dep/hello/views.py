@@ -6,7 +6,7 @@ from django import forms
 class TaskForm(forms.Form):
     task = forms.CharField(max_length=100)
 
-tasks = []
+taskss = []
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
@@ -27,8 +27,10 @@ def tasks(request):
     if request.method == 'POST':
         task_form = TaskForm(request.POST)
         if task_form.is_valid():
-            task_form.save()
+            task = task_form.cleaned_data['task']
+            taskss.append(task_form)
+            task_form = TaskForm()
     else:
         task_form = TaskForm()
-    tasks.append(task_form)
-    return render(request, 'tasks.html', {'tasks': tasks, 'form': task_form})
+    taskss.append(task_form)
+    return render(request, 'tasks.html', {'tasks': taskss, 'form': task_form})

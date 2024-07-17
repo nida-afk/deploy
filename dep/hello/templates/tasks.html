@@ -4,6 +4,9 @@
     {%csrf_token %}
     {{ form }}
     <input type="submit" name="submit">
+    {% for t in tasks %}
+    <li> {{ t }}</li>
+    {% endfor %}
     </form>
 </body>
  </html>
