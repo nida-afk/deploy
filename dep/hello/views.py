@@ -3,8 +3,10 @@ from django.http import HttpResponse
 import datetime
 from django import forms
 
+class TaskForm(forms.Form):
+    task = forms.CharField(max_length=100)
 
-
+tasks = []
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
