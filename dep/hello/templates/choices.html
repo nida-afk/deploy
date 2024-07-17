@@ -4,9 +4,10 @@
     {%csrf_token %}
     {{ form }}
 <input type="submit" name="submit">
+
+    </form>
     {% for c in choices  %}
 <li>{{ c }}</li>
     {% endfor %}
-    </form>
 </body>
 </html>

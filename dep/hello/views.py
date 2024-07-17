@@ -45,7 +45,6 @@ def tasks(request):
 
 def choose(request):
     if request.method == 'POST':
-
         choice_form = ChoicesForm(request.POST)
         if choice_form.is_valid():
             choice = choice_form.cleaned_data['choices']
