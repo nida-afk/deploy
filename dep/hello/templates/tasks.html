@@ -1,5 +1,6 @@
 <html >
-<body>
+<body> <pre>
+    <a href = "{% url 'index' %}" >hello</a>
     <form method="post" >
     {%csrf_token %}
     {{ form }}
@@ -8,5 +9,6 @@
     <li> {{ t }}</li>
     {% endfor %}
     </form>
+</pre>
 </body>
  </html>
